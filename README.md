@@ -17,7 +17,7 @@
 * Comparing (similiarity) two NDS  with metrics.
 * Find higher scoring queries that are most similar to news headlines.
 * Basic project [from NDS-Metrics score](https://github.com/ackermanjayjay/NDS_Metrics-Score-)
-* Make A frontend view with Reactjs
+* Make A frontend view with Reactjs (Frontend still production)
 
 # Scope
 * Techique embedding data  with TFIDF and Counvectorizer( Bag of word )
