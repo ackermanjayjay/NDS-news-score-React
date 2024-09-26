@@ -1,33 +1,73 @@
 # NDS-news-score-React 
 
-## Tools
-<p align="left">
-  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" 
-  alt="FastApi">
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" 
-  alt="Python">
-  <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue" 
-  alt="ML">
-  </p>
-  <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/><img src="https://img.shields.io/badge/logo-javascript-blue?logo=javascript"/>
+
+## Project Overview
+This project builds a News Recommendation System that focuses on recommending business-related news articles to users. The system leverages Natural Language Processing (NLP) techniques to analyze articles and user preferences for personalized recommendations.
+
+## Key Objectives:
+Content-based recommendations: Suggest articles similar to those the user has interacted with.
+User-based recommendations: Suggest articles that are popular among users with similar profiles.
+
+## Key Features
+NLP-based Article Representation: Uses TF-IDF, Word2Vec, or BERT embeddings to represent article content.
+Recommendation Algorithms: Includes both collaborative filtering and content-based filtering approaches.
+
+## Model Overview
+* The system uses a combination of content-based filtering and collaborative filtering:
+
+* Content-Based Filtering: Represents articles using embeddings from TF-IDF, and calculates similarity using cosine similarity.
+
+* Collaborative Filtering: Uses historical data of users and their interactions with articles to find similar users and recommend relevant articles.
 
 
-# Objective
-* Using data [News Dataset BBC](https://www.kaggle.com/datasets/gpreda/bbc-news) from 2013 to 2024. 
-* Comparing (similiarity) two NDS  with metrics.
-* Find higher scoring queries that are most similar to news headlines.
-* Basic project [from NDS-Metrics score](https://github.com/ackermanjayjay/NDS_Metrics-Score-)
-* Make A frontend view with Reactjs (Frontend still production)
 
-# Scope
-* Techique embedding data  with TFIDF and Counvectorizer( Bag of word )
-* Find query beetween NDS to find higher similiarity
+## NLP Techniques Used:
 
-# How to use
+* Text Cleaning: Removal of stop words, special characters, etc.
+
+* Text Embedding:
+
+  * TF-IDF: Simple term frequency-inverse document frequency model.
+
+## System Architecture
+The system architecture consists of the following components:
+
+* Data Ingestion: Collects news data from Kagle
+* Preprocessing: Cleans and tokenizes news articles. NLP techniques like lemmatization and stop-word removal are applied.
+* Content Representation: Uses various embedding techniques to transform the articles into numerical representations.
+Recommendation Engine:
+* Content-based: Recommends articles based on article similarity using cosine similarity on vectorized text.
+* Collaborative-based: Uses historical user interactions to recommend articles.
+
+
+
+
+
+
+## Data Source:
+* BBC: https://www.kaggle.com/datasets/gpreda/bbc-news
+
+## Model Overview
+The system uses a combination of content-based filtering and collaborative filtering:
+* Content-Based Filtering: Represents articles using embeddings from TF-IDF, and calculates similarity using cosine similarity.
+* Collaborative Filtering: Uses historical data of users and their interactions with articles to find similar users and recommend relevant articles.
+
+## NLP Techniques Used:
+* Text Cleaning: Removal of stop words, special characters, etc.
+* Text Embedding:
+  * TF-IDF: Simple term frequency-inverse document frequency model.
+
+## Usage
 <pre>
 pip venv "you name venv"
 pip install requirements.txt
 </pre>
+
+<pre>
+fastapi dev server.py
+</pre>
+
+## API Endpoint
 
 ```
 http://127.0.0.1:8000/search/text?q=harry kane
@@ -69,3 +109,13 @@ http://127.0.0.1:8000/search/text?q=harry kane
 
 
 
+## Tools
+<p align="left">
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" 
+  alt="FastApi">
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" 
+  alt="Python">
+  <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue" 
+  alt="ML">
+  </p>
+  <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/><img src="https://img.shields.io/badge/logo-javascript-blue?logo=javascript"/>
